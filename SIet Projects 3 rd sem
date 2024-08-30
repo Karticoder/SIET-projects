@@ -1,0 +1,935 @@
+x=5
+print(type(x))
+x="hello SIET"
+print(type(x))
+x=5.0
+print(type(x))
+x=["apple","banana","mango"]
+print(type(x))
+
+x=("apple","banana","mango")
+print(type(x))
+
+Dic={"Name":"kartik","Age":"19","phno":1245464}
+print(type(Dic))
+
+x={1,2,4,4,54}
+print(type(x))
+
+#Typeconversion:conversion of one datatype to another datatype
+a=str(1)
+print(type(a))
+
+b=float(10)
+print(b)
+print(type(b))
+
+y=int(2.8)
+print(y)
+print(type(y))
+
+import random as rand
+x=rand.randint(1,100)
+print(x)
+
+
+"""Operators in Python
+1.Arithmatic Operators
+2.Assignment Operators
+3.Comaparison Operators
+4.Logical operators
+5.identity operators
+6.Membership Operators
+7.Bitwise Operators
+
+x+y
+x-y
+x*y
+x/y
+x%y
+x**y
+x//y
+
+x=2(assignment aperator)
+x==y(comarison operator)
+
+Assignment Operators
+x=x+3 # x+=3
+x=x-3 # x-=3
+x=x*3 # x*=3
+x=x**3 # x**=3
+x=x%3 # x%=3
+x=x/3 # x/=3
+x=x//3 # x//=3
+
+#Comparison Operators
+x==y
+x!=y
+x>y
+x<y
+x<=y
+x>=y
+
+#Logical Operators
+And (x>y and x>z)
+Or (x>y or x>z)
+NOt (not(x>y or x>z))
+
+#Membership operators
+in
+not in
+"""
+
+
+a=33
+b=200
+if a>b:
+  print("a is greater")
+elif a<b:
+  print("b is greater")
+else:
+  print("Both are equal")
+
+
+
+
+
+#Voting System
+name=input("Enter  name ")
+age=int(input("Enter age ofperson"))
+if age<=18:
+
+    print(f"{name}You are not eligible to vote please wait for {18-age}years")
+else:
+    print(name,"You are eligible to vote, You can vote ")
+
+
+import random
+n=random.randint(1,20)
+print("I am thinking of number which is in the range b/w 1 to 20")
+
+for i in range(5):
+  print("take a guess,guess that number")
+  guess=int(input())
+
+  if guess<n:
+    print("Your guess is too low")
+  elif guess>n:
+    print("your guess is high")
+  else:
+    break
+if guess==n:
+  print(f"Congratulations u guessed that number\nNo of guesses taken is {guess}")
+else :
+  print("Nope i am thinking of number was",str(n))
+
+#IN while loop we can execute set of statement as long as condition is true
+"""i=1
+while i<6:
+  print(i)
+  if i==3:
+    break
+  i+=1"""
+i=0
+while i<7:
+  if i==3:
+    continue
+  print(i)
+  i+=1
+
+
+#For loop: it is a loop which is used for iteration or iterating a over a sequence of values
+"""fruits=["apple","banana","cherry"]
+for i in fruits:
+  print(i)
+
+for x in "Kartik Bhimanna Kenchi":
+  print(x)
+
+for i in range(2,30,5):
+  print(i)"""
+# Nested For loops
+adj=["red","big","tasty"]
+fruits=["apple","banana","cherry"]
+for i in adj:
+  for x in fruits:
+    print(i,x)
+
+
+
+#Strings
+"""s="Anjanadri"
+print(s[2])"""
+for x in "banana":
+  print(x)
+print(len(x))
+"""c="apple"
+print(len(c))
+
+a="Kartik Bhimanna Kenchi"
+print(len(a))
+print(a[0:22:3])
+print(a[: :-1])"""
+
+"""text="the best things in life are  free"
+print("free" in text)
+print("Expensive" not in text )"""
+
+#String Modification
+a="Kartik Bhimanna Kenchi   "
+#print(a.upper())
+#print(a.lower())
+#print(a.strip())
+#print(a.replace("a","A"))
+print(a.split(","))
+
+a="Kartik Bhimanna Kenchi"
+a=a.strip()
+print(a)
+
+print(a.capitalize()) #it will make first letter capital remaining all are small
+
+"""def name(nam):
+  print("My name is "+nam)
+name("kartik")"""
+
+def my_fun(fname):
+  print(fname+"pm")
+my_fun("Kartik")
+my_fun("AAAA")
+my_fun("AAASDAS")
+
+
+def my_fun(fname,lname):
+  print(fname,lname+"pm")
+my_fun("Kartik","KENCHI")
+my_fun("AAAA","asdas")
+my_fun("AAASDAS","fasdfad")
+
+# Orbitary arguments (*args) :*args allows a function to accept any number of positional arguments. It collects these arguments into a tuple.
+#If u dont know how many arguments passed to the function add the astric symbol before parameter name in function
+def my_fun(*kids):
+
+  print("Youngest child is "+kids[1])
+my_fun("Anjanadr","Rohan","Rahul")
+
+
+# key word arguments : **kwargs allows a function to accept any number of keyword arguments (i.e., named arguments). It collects these arguments into a dictionary.
+def my_f(student1,student2,student3):
+  print("youngest student is "+student3)
+my_f("Anjanadri","Rahul","any")
+
+#Default parameters : the function  in  which  arguments are initially having the parameter if u want anonther parameteu can pass through function
+def my_coun(Coutry="india"):
+  print("I am from"+Coutry)
+my_coun("Swedan")
+my_coun("USA")
+my_coun()
+my_coun("russia")
+
+#Return Values : 5 multiples of variable
+def fun(x):
+  for i in range (1,6,1):
+    y=x*i
+    print(y)
+fun(5)
+
+
+
+
+
+# Pass= when u invoke the pass statement if the particular func doesnot have value then we call pass func
+#Defining Empty Functions or Methods: When you want to define a function or method that you plan to implement later, you can use pass to create a stub for the function.
+# This program works on the concept of recursion......
+#factorial programm
+"""def fun():
+  pass"""
+
+def fact(n):
+  if n==1:
+    return 1
+  else:
+    return n*fact(n-1)
+while True:
+  n=int(input("enter the value"))
+  if n>=1:
+    break
+  else:
+    print("Factorial is not possible , please enter a +ve number")
+fact(n)
+
+
+
+
+#Fibanacci Series: Sum of previous two numbers is  called fibanacci series
+def fib(n):
+  if n<=1:
+    return 1
+  else :
+    return fib(n-1)+fib(n-2)
+while True:
+
+  term=int(input("Enter the length of fibanaccie series is to be genenarated\n"))
+  if term<=0:
+    print("Enter a positive integer")
+  else:
+    break
+print("fibanaccie Series")
+for i in range(term):
+  print(fib(i))
+
+#list: It is built in data structure to store multiple values in single variable
+
+"""feautures of list
+>>> It is mutable
+>>> It is ordered
+>>> It allows duplicate values l=[1,2,3,4,5,4,5]"""
+
+thislist=["apple","banana","cherry"]
+print(thislist)
+
+#printing length of the list
+print(len(thislist))
+print(thislist[0])
+print(thislist[-1])
+
+# CHECKING FOR AN ELEMENT IN A LIST
+
+"""if "apple" in thislist:
+  print("YES apple is there in this list")
+
+if "apple" not in thislist:
+  print("YES apple is not there in this list")
+
+thislist[1]="mango"
+thislist[2]="tomato"
+print(thislist)
+
+#INSERTING VALUES IN THE LIST
+thislist.insert(2,"Watermelon")
+print(thislist)
+
+thislist.append("orange")
+print(thislist)
+
+#removing the value from the list
+thislist.remove("orange")
+print(thislist)"""
+
+#adding the items of one list to another
+thislist=["apple","banana","cherry"]
+newlist=["mango","watermelon","pappaya"]
+thislist.extend(newlist)
+print(thislist)
+
+#Pop method remove the element from th list here we pass index as argument
+thislist.pop(1)
+print(thislist)
+
+#delete the element of a list
+del thislist[0]
+print(thislist)
+
+#deleting the Entire list
+del thislist
+
+thislist=["apple","banana","cherry"]
+
+#clearing the list
+thislist.clear()
+print(thislist)
+
+
+#looping the list
+thislist=["apple","banana","cherry"]
+for i in thislist:
+  print(i)
+
+for i in range(len(thislist)):
+  print(thislist[i])
+
+
+i=0
+while i<len(thislist):
+  print(thislist[i])
+  i+=1
+
+
+#Fibanacci Series
+def fib(n):
+  if n<=1:
+    return 1
+  else :
+    return fib(n-1)+fib(n-2)
+
+while True :
+  term=int(input("Enter the length of fibanaccie series is to be genenarated\n"))
+  if term>0:
+      print("fibanaccie Series")
+      for i in range(term):
+        print(fib(i))
+      break
+  else:
+      print("ENter the +ve value")
+
+
+a="hello world "
+print(a.split())
+
+#tuples : ordered, unchangable,allows duplicate values
+"""thistuple=("apple","banana","cherry")
+print(thistuple)
+#tuple allows duplicate values
+thistuple=("apple","banana","cherry","orange","orange")
+print(thistuple)
+
+# length of tuple
+print(len(thistuple))
+
+thistuple=("apple",)
+print(thistuple)
+
+thistuple=("apple","banana","cherry","orange","orange")
+print(thistuple[1])
+
+
+
+
+#adding one tuple with another
+thistuple=("apple","banana","cherry")
+sentuple=("ornage",)
+thistuple += sentuple
+print(thistuple)
+
+# Convert the tuple into list and remove apple and conert it back into  a tuple
+thistuple=list(thistuple)
+del thistuple[0]
+thistuple=tuple(thistuple)
+print(thistuple)
+
+#using the del keyword through which we can delete the entire tuple
+del thistuple
+print(thistuple)"""
+
+thistuple=("apple","banana","cherry","orange")
+for i in thistuple:
+  print(i)
+
+#using while loop to iterate over a thistuple
+i=0
+while i<len(thistuple):
+  print(thistuple[i])
+  i+=1
+
+
+"""tuple1=("a","b","c")
+tuple2=(1,2,3)
+tuple3=tuple1+tuple2
+print(tuple3)"""
+
+"""tuple1=("a","b","c")
+print(tuple1*2)"""
+
+
+
+"""#python sets: cannot have duplicate values,unordered
+thisset={"apple","banana","cherry"}
+print(thisset)
+
+#duplicate values in a set will be ignored
+thisset={"apple","banana","cherry","apple"}
+print(thisset)
+
+#length of this set
+print(len(thisset))
+
+#looping throuhgh the set
+for i in thisset:
+  print(i)
+
+#checking whether a particular value exist in set or not
+print("apple" in thisset)
+
+print( "banana" not in thisset)
+
+#adding an item to the set
+thisset.add("orange")
+print(thisset)
+
+#adding elements from one set to other set
+thisset={"apple","banana","cherrY"}
+otherset={"pineapple","pappaya","grapes"}
+
+thisset.update(otherset)
+print(thisset)
+
+#removing of particular element from a set
+thisset.remove("banana")
+print(thisset)
+
+#using the clear method to empty the set
+thisset.clear()
+print(thisset)
+
+#using the del keyword to delete the set entirely
+del thisset
+print(thisset)"""
+
+"""
+#looping through the set
+thisset={"apple","banana","cherry","apple"}
+for i in thisset:
+  print(i)
+
+#joining of two sets
+thisset={"apple","banana","cherry","apple"}
+otherset={"a","b","c"}
+set3=thisset.union(otherset)
+print(set3)
+"""
+"""thisset={"apple","banana","cherry","apple"}
+otherset={"a","b","c"}
+set3=thisset | otherset
+print(set3)"""
+
+#using the update method to insert values from one set to another set
+'''thisset={"apple","banana","cherry","apple"}
+otherset={"a","b","c"}
+thisset.update(otherset)
+print(thisset)'''
+
+
+"""set1={1,2,3,4,5,6}
+set2={1,3,10}
+set3=set1.intersection(set2)
+print(set3)"""
+
+#keeping all the elements from set1 that are not there in set2
+"""set1={1,4,5,3}
+set2={1,2,3}
+set3=set1.difference(set2)
+print(set3)"""
+
+#we use the difference underscore_update method to keep the items that are not present in both the sets
+set1={"apple","banana","cherry"}
+set2={"google","microsoft","apple"}
+set1.difference_update(set2)
+print(set1)
+
+#Rock paper scissor game
+# home work: Create code which takes two choices
+import random
+def get_computer_choice():
+  choices=["rock","paper","scissors"]
+  return random.choice(choices)
+def get_user_choice():
+  user_choice=input("enter rock,paper or scissors").lower()
+  while user_choice not in ["rock","paper","scissors"]:
+    print("inavalid choice please do enter the choice again")
+    user_choice=input("enter rock,paper or scissors").lower()
+  return user_choice
+
+def determine_winner(user_choice,computer_choice):
+  if user_choice==computer_choice:
+    return "its a tie"
+
+  if (user_choice =="rock" and computer_choice=="scissors") or \
+     (user_choice =="scissors" and computer_choice=="paper") or \
+     (user_choice =="paper" and computer_choice=="rock") :
+     return "you win"
+
+  return "computer wins"
+
+def play_game():
+  print("welcome to the rock paper scissor game ")
+  user_choice = get_user_choice()
+  computer_choice = get_computer_choice()
+
+  print(f"you choose :{user_choice}")
+  print(f"computer_choice:{computer_choice}")
+
+  result=determine_winner(user_choice,computer_choice)
+  print(result)
+
+#start the game
+play_game()
+
+#Dictionary is a built in data stucture which contains data in the form of key value pairs
+"""thisdict={"Brand":"Ferrari","model":"terminator","year":"1939"}
+print(thisdict)
+"""
+
+#dictionaries cannot have two items with same beacause in a dictionary will get overwrited or overwritten over the existing value
+thisdict={"Brand":"Ferrari","model":"terminator","year":"1939"}
+print(thisdict)
+print(len(thisdict))
+
+#accessing items from dictionary
+x=thisdict["Brand"]
+print(x)
+
+#get keys and values
+x=thisdict.keys()
+y=thisdict.values()
+print(x)
+print(y)
+
+#check if a particular key exist or not
+if "model" in thisdict:
+  print("Yes model is a key that exist in the dictionary")
+
+#changing values
+thisdict["year"]="2024"
+print(thisdict)
+
+#adding items to the dictionary
+thisdict["color"]="red"
+print(thisdict)
+
+#using the pop method : its removes am item when we specify a particular key name
+thisdict.pop("color")
+print(thisdict)
+
+#clear method empties the entire directory
+thisdict.clear()
+print(thisdict)
+
+#looping in the dictionary
+thisdict={"Brand":"Ferrari","model":"terminator","year":"1939"}
+for i in thisdict:
+  print(i)
+
+for i in thisdict.values():
+  print(i)
+
+#making a  copy of the existing dictionary
+copydict=dict(thisdict)
+print(copydict)
+
+#Rock paper scissor game
+# home work: Create code which takes two choices
+#import random
+def get_user2_choice():
+  user2_choice=input(" 2ND USER enter rock,paper or scissors").lower()
+  while user2_choice not in ["rock","paper","scissors"]:
+    print("inavalid choice please do enter the choice again")
+    user2_choice=input(" 2ND USER enter rock,paper or scissors").lower()
+  return user2_choice
+
+
+def get_user_choice():
+  user_choice=input("1ST USER enter rock,paper or scissors").lower()
+  while user_choice not in ["rock","paper","scissors"]:
+    print("inavalid choice please do enter the choice again")
+    user_choice=input(" 1ST USER enter rock,paper or scissors").lower()
+  return user_choice
+
+def determine_winner(user_choice,user2_choice):
+  if user_choice==user2_choice:
+    return "its a tie"
+
+  if (user_choice =="rock" and user2_choice=="scissors") or \
+     (user_choice =="scissors" and user2_choice=="paper") or \
+     (user_choice =="paper" and user2_choice=="rock") :
+     return "you win"
+
+  return "user 2 wins"
+
+def play_game():
+  print("welcome to the rock paper scissor game ")
+  user_choice = get_user_choice()
+  user2_choice = get_user2_choice()
+
+  print(f"you choose :{user_choice}")
+  print(f"User2 choice:{user2_choice}")
+
+  result=determine_winner(user_choice,user2_choice)
+  print(result)
+
+#start the game
+play_game()
+
+def linearsearch(lst,target):
+  for i in range(len(lst)):
+    if lst[i]==target:
+      return i
+    else :
+      return "element not found"
+lst=[]
+n=int(input("eNTER NO ELEMENTS IN LIST"))
+for i in range(n):
+  ele=int(input("ENTER AN ELEMENT"))
+  lst.append(ele)
+target=int(input("Enter the element to be searched"))
+i=linearsearch(lst,target)
+print(f"{target} is present at an index{i}")
+
+
+
+#algorithum is step by step procedure to solve particular problem
+
+"""
+# the order of complexity of algorithum
+  1.Being the fastest
+  2.Being the slowest
+
+1:O(1)
+2:O(logn)
+3:O(n)
+4:O(n^2)
+5:o(n^3)
+6:O(n^k)
+7:O(2^n)
+8:O(n!)
+
+    problem no 1: calculate sum of two numbers
+    Algorithum
+    1.start
+    2.Take two number as Inputs
+    3.Add the two numbers
+    4.Output the result
+    5.End"""
+
+"""def add():
+  a=int(input("Enter a first number"))
+  b=int(input("Enter a second number"))
+  return a+b
+print(add())"""
+
+
+"""algorithum for floar division
+
+1.start
+2.Take the inputs
+3.perform floar div,store the ans in one variable
+4.print the result
+5.End"""
+
+
+def div():
+  a=int(input("Enter a nominator"))
+  b=int(input("Enter a denominator"))
+  return a//b
+print(div())
+
+
+from inspect import EndOfBlock
+#  Problem Statement :Algorithum to find maximum value in the list
+"""
+step1: start
+step2: input the list elments
+step3:finding the maximum value
+step4: Initialize the first element to be maximum element
+step5: loop through the entire list
+step6: compare each element which is the max element with max next element in the list
+step7: if an element is found to be greater than the current maximum element
+step8: update new maximum element
+step9: output the maximum value
+step10:End
+"""
+def find_max(num):
+  max_value=num[0]
+  for i in num:
+    if i>max_value:
+      max_value=i
+  return max_value
+print(find_max([3,7,14,1,2]))
+
+#algorithum
+"""
+1. start
+2. Take the Value
+3. if the number is 1 return 1
+4. multiply the number by the factorial of (number-1)
+5. End"""
+"""
+def fact(n):
+  if n==1:
+    return 1
+  else:
+    return n*fact(n-1)
+
+print(fact(5))"""
+
+
+# problem statement : print the fibanaccie series of number of term enteres
+"""1.start
+2. take the n Value
+3. if n is less than or equal to 1 then we return value of n
+4. else if the value is more than 1 then we do fibanaccie(n-1)+fibanaccie(n-2)
+5. print the Output
+6. end"""
+
+def fib(n):
+  if n<=1:
+    return n
+  else :
+    return fib(n-1)+fib(n-2)
+term=int(input("enter the length of fibanaccie series to be generated"))
+if term<=0:
+  print("ente a positive value ")
+else:
+  print("fibanaccie series will be")
+  for i in range(term):
+    print(fib(i))
+
+
+# algorithum for palindrome
+"""
+1.start
+2.Take input
+3.reverse the  enteres string
+4.Compare the existing with reversed string
+5. If they are equal then return it is a palindrome  else return it is not a palindrome
+6.End
+"""
+
+"""def palindrome(name):
+  if name[::-1]==name:
+    return "It is Palindrome "
+  else:
+    return " It is not Palidrome"
+name=input("enter a string or a number").lower()
+print(palindrome(name))"""
+
+
+#Linear search : straight forward algorithum that checks each element in a list one by one untill it finds the element we are looking for
+"""def lin_search(arr,target):
+  for i in range(len(arr)):
+    if arr[i]==target:
+      return i # print(f"the elememt is found at index no{0}")
+
+  return -1
+numbers=[10,20,30,40,60,70]
+print(lin_search(numbers,40))
+"""
+# linear search to find sting element in side the list
+def lin_search(arr,target):
+  for i in range(len(arr)):
+    if arr[i]==target:
+      return i # print(f"the elememt is fou   nd at index no{0}")
+
+  return -1
+words=["apple","mango","banana","cherry"]
+print(lin_search(words,"banana"))
+
+
+
+
+
+# Binary search: It is a more efficient algorithum than linear search because it has a complexity O(logn)
+#unlike linear search which has a complexity of O(n) in binary search it repeatedly
+#divides the searching interval in half if the target values is less than midpoint we go to the left side
+#if it is more than the midpoint we go to the right side and find for the target value
+
+def binary_search(arr,target):
+  left=0
+  right=len(arr)
+  while left<=right:
+    mid=(left+right)//2
+    if arr[mid]==target:
+      return mid
+    elif arr[mid]<target:
+      left=mid
+    else:
+      right=mid-1
+  return -1
+numbers=[10,20,30,40,50]
+print(binary_search(numbers,50))
+
+#binary search to search string
+def binary_search(arr,target):
+  left=0
+  right=len(arr)
+  while left<=right:
+    mid=(left+right)//2
+    if arr[mid]==target:
+      return mid
+    elif arr[mid]<target:
+      left=mid
+    else:
+      right=mid-1
+  return -1
+words=["apple","banana","cherry"]
+print(binary_search(words,"cherry"))
+
+#love calculator
+import random
+def love_calculate():
+  print("welcome to love calculator")
+
+  name1=input("enter the first name ")
+  name2=input("enter second name")
+
+  love_score=random.randint(1,100)
+
+  print(f"the percentage of love between {name1} and {name2} is {love_score}%")
+love_calculate()
+
+#Expense tracker app we use linear search and binary search
+transactions = [
+{"date": "2024-08-01", "amount": 50.0, "description": "Groceries"},
+{"date": "2024-08-02", "amount": 20.0, "description": "Bus fare"},
+{"date": "2024-08-03", "amount": 100.0, "description": "Electricity bill"},
+{"date": "2024-08-04", "amount": 200.0, "description": "New shoes"},
+]
+
+#linear search for transaction by date
+def search_by_date(transaction,target_date):
+  for transaction in transactions:
+    if transaction["date"]==target_date:
+      return transaction
+  return "transaction not found"
+
+print(search_by_date(transactions,"2024-08-05"))
+
+
+
+#Expense tracker app we use linear search and binary search
+
+transactions = [
+{"date": "2024-08-01", "amount": 50.0, "description": "Groceries"},
+{"date": "2024-08-02", "amount": 20.0, "description": "Bus fare"},
+{"date": "2024-08-03", "amount": 100.0, "description": "Electricity bill"},
+{"date": "2024-08-04", "amount": 200.0, "description": "New shoes"},
+]
+
+#linear search for transaction by date
+
+
+def search_by_date(transaction,target_date):
+  for transaction in transactions:
+    if transaction["date"]==target_date:
+      return transaction
+
+  return "transaction not found"
+
+def start():
+  np=input("Enter the new payment which you want to store (in the form of key value pair means Dictionary)\n")
+  np=eval(np)
+  transactions.append(np)
+  print(" Your transaction history is updated")
+
+
+
+#print(search_by_date(transactions,"2024-08-05"))
+
+while True:
+  print(" choose the option ")
+  print("1.Add new payment history 2.search the history of transaction 3.Show all transactionns 4.To exit ")
+  option=int(input())
+  if option==1:
+    start()
+  elif option==2:
+    date=input("ENter the date of when u did the transaction")
+    print(search_by_date(transactions,date))
+  elif option==3:
+    print(transactions)
+  elif option==4:
+    print("Thank you for adding the transaction history")
+    break
+  else:
+    print("ENter a valid choice")
+#{"date": "2024-08-28", "amount": 100.0, "description": "Groceries"}
+
+
