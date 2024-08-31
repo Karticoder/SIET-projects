@@ -1,0 +1,92 @@
+icecream={"orangeice":100,
+"strawberryice":100,
+"venillaice":100,
+"chocklateice":100
+           }
+profit=0
+
+def orange(icecream):
+  global profit
+  n=int(input(f"Enter no of orange ice creams you want  "))
+  print("Thank you for buying the ic")
+  if "orangeice" in icecream:
+    icecream["orangeice"]=icecream["orangeice"]-n
+  rm=icecream["orangeice"]
+  profit+=5*n
+  return f"remaining orange ic are {rm} "
+
+def straw(icecream):
+  global profit
+  n=int(input(f"Enter no of strawberry ice creams you want  "))
+  print("Thank you for buying the ic")
+  if "strawberryice" in icecream:
+    icecream["strawberryice"]=icecream["strawberryice"]-n
+  rm=icecream["strawberryice"]
+  profit+=5*n
+  return f"remaining strawberry ic are{rm} "
+
+
+def venilla(icecream):
+  global profit
+  n=int(input(f"Enter no of venilla ice creams you want  "))
+  print("Thank you for buying the ic")
+  if "venillaice" in icecream:
+    icecream["venillaice"]=icecream["venillaice"]-n
+  rm=icecream["venillaice"]
+  profit+=5*n
+  return f"remaining venilla ic are{rm} "
+
+def chocklate(icecream):
+  global profit
+  n=int(input(f"Enter no of chocklate ice creams you want  "))
+  if "chocklateice" in icecream:
+    icecream["chocklateice"]=icecream["chocklateice"]-n
+  rm=icecream["chocklateice"]
+  print("Thank you for buying the ic")
+  profit+=5*n
+  return f"remaining chocklate ic are{rm} "
+
+
+while True:
+  print("welcome to Kartik ice cream shop")
+  print("we have the following falvours (order which u want)")
+  print("1.Orange (10 rupees)")
+  print("2.Strawberry (15 rupees)")
+  print("3. Venilla (18 rupees)")
+  print("4. chocklate (25 rupees)")
+  print("5.Exit")
+  print("6.Shop owner(if u are owner press this option)")
+
+  choice=int(input("Enter a choice  "))
+  if choice==1:
+    print(orange(icecream))
+
+  elif choice==2:
+    print(straw(icecream))
+  elif choice==3:
+    print(venilla(icecream))
+  elif choice==4:
+    print(chocklate(icecream))
+  elif choice==5:
+    print("Thank u for visiting have a nice day")
+    break
+  elif choice==6:
+    passkey=input("ENter the password")
+    if passkey=="icecandy":
+      print("Login Successfull")
+      print("1.Remaining stocks of ice cream")
+      print("2.Know the profit")
+      print("3.Exit")
+      while True:
+        option=int(input())
+        if option==1:
+          print(icecream)
+        elif option==2:
+          print(profit)
+        elif option==3:
+          break
+        else:
+          print("ENter a correct option")
+
+  else:
+    print("Enter a correct choice")
