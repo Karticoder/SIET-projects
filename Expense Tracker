@@ -15,7 +15,7 @@ def search_by_date(target_date):
       return transaction
   return "transaction not found"
 
-print(search_by_date("2024-08-05"))
+#print(search_by_date("2024-08-03"))
 
 #in the transactions array we use the sort method to sort the amount key value
 #in all the dictionaries  in the transactions array and we also use the lambda function
@@ -33,16 +33,15 @@ def search_by_amount(target_amount):
     elif transactions[mid]["amount"]<target_amount:
       left=mid
     else:
-
       right=mid-1
-    return "transaction not found"
+  return "transaction not found"
 
 print(search_by_amount(50.0))
 
 #adding a new expense
-def add_expense(date,amount,discription):
+def add_expense(date,amount,description):
   new_transaction={"date":date,"amount":amount,"description":description}
-  transactions.append(new_transactions)
+  transactions.append(new_transaction)
   return "expense added successfully!"
 
 
@@ -75,11 +74,12 @@ def display_all_expenses():
 #building a gradio interface
 with gr.Blocks() as demo:
   gr.Markdown("#Expense tracker")
+
   with gr.Tab("Search By Date"):
     date_input=gr.Textbox(label="enter date(YYYY-MM-DD)")
     #json is javascript object notation which is a text based format for storing strings
     date_output=gr.JSON(label="result")
-    gr.Button ("Search").click(fn=search_by_date,inputs=date_input,outputs=date_output)
+    gr.Button("Search").click(fn=search_by_date,inputs=date_input,outputs=date_output)
 
 
   with gr.Tab("Search By Amount"):
@@ -91,13 +91,13 @@ with gr.Blocks() as demo:
   with gr.Tab("Add a new expense"):
     date_input=gr.Textbox(label="enter date(YYYY-MM-DD)")
     amount_input=gr.Number(label="enter amount")
-    description_input=gr.Textbox(label="Ente the discription")
+    description_input=gr.Textbox(label="Enter the description")
     add_output=gr.Textbox(label="status")
     gr.Button("Add expense").click(fn=add_expense,inputs=[date_input,amount_input,description_input],outputs=add_output)
 
   with gr.Tab("Display all expenses"):
-    all_expenses_output=gr.JSON(label="all exoenses")
-    gr.Button("Show all ")
+    all_expenses_output=gr.JSON(label="all expenses")
+    gr.Button("Show all Expenses").click(fn=display_all_expenses,outputs=all_expenses_output)
 
 demo.launch()
 
